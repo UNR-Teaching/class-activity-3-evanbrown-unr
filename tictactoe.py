@@ -60,14 +60,15 @@ class Player():
 class TicTacToe():
     def __init__(self):
         self.gameboard = Gameboard()
-        self.player_x = Player('X')
-        self.player_o = Player('O')
+        self.player_x = Player('a')
+        self.player_o = Player('b')
 
     def gameover(self, winner):
         if (winner):
             print("Congratulations! Player",winner.mark,"won!")
         else: print("Draw!")
 
+    # contains main game loop
     def play(self):
         winner = None
         self.gameboard.show()
@@ -81,7 +82,6 @@ class TicTacToe():
             winner = self.gameboard.check_win(self.player_o)
             if (winner or self.gameboard.is_full()): break
         self.gameover(winner)
-
 
 
 if __name__ == "__main__":
